@@ -1,0 +1,32 @@
+Metadata-Version: 2.4
+Name: proxy_fetcher
+Version: 0.1.1
+Summary: Package for fetching working proxies
+Home-page: https://github.com/yourusername/proxy-fetcher
+Author: Your Name
+Author-email: your.email@example.com
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.6
+Description-Content-Type: text/markdown
+Requires-Dist: requests>=2.25.1
+Requires-Dist: tqdm>=4.60.0
+Dynamic: author
+Dynamic: author-email
+Dynamic: classifier
+Dynamic: description
+Dynamic: description-content-type
+Dynamic: home-page
+Dynamic: requires-dist
+Dynamic: requires-python
+Dynamic: summary
+
+# Proxy Fetcher
+
+Python package for fetching working HTTP proxies from multiple sources.
+
+## Installation
+```bash
+pip install proxy-fetcher
+```
