@@ -3,7 +3,7 @@ from tqdm import tqdm
 import random
 
 DEFAULT_SETTINGS = {
-    'MIN_WORKING_PROXIES': 10,
+    'MIN_WORKING_PROXIES': 10,  # Было 'MIN_WORKING_PROXIES'
     'PROXY_LIMIT': 100,
     'TIMEOUT': 5,
     'MAX_ATTEMPTS': 3,
@@ -15,10 +15,31 @@ DEFAULT_SETTINGS = {
 }
 
 class ProxyFetcher:
+    """
+    Main class for fetching and validating proxies.
+    
+    Args:
+        **kwargs: Configuration overrides (see DEFAULT_SETTINGS)
+        
+    Example:
+        >>> fetcher = ProxyFetcher(MIN_WORKING_PROXIES=5)
+        >>> if fetcher.fetch_proxies():
+        ...     print(fetcher.working_proxies)
+    """
+        
     def __init__(self, **kwargs):
         self.settings = DEFAULT_SETTINGS.copy()
         self.settings.update(kwargs)
+        
+        # Инициализируем все параметры как атрибуты
+        self.min_working = self.settings['MIN_WORKING_PROXIES']  # Исправлено название
+        self.proxy_limit = self.settings['PROXY_LIMIT']
+        self.timeout = self.settings['TIMEOUT']
+        self.max_attempts = self.settings['MAX_ATTEMPTS']
+        self.test_urls = self.settings['TEST_URLS']
+        
         self.working_proxies = []
+    
     
     def get_proxies(self):
         """Получает прокси с нескольких источников"""
@@ -87,6 +108,25 @@ class ProxyFetcher:
             return False
 
 def get_proxies(**kwargs):
+    """
+    Quick access function to get working proxies.
+    
+    Args:
+        **kwargs: Configuration options:
+            - MIN_WORKING_PROXIES (int): Default 10
+            - PROXY_LIMIT (int): Default 100
+            - TIMEOUT (int): Default 5
+            - MAX_ATTEMPTS (int): Default 3
+            - TEST_URLS (list): Default IP check services
+    
+    Returns:
+        list: List of working proxies in 'ip:port' format
+        
+    Example:
+        >>> proxies = get_proxies(TIMEOUT=10)
+        >>> print(f"Found {len(proxies)} proxies")
+    """
+    
     fetcher = ProxyFetcher(**kwargs)
     success = fetcher.fetch_proxies()
     return fetcher.working_proxies if success else []

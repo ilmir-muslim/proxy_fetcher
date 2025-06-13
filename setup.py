@@ -5,7 +5,7 @@ with open("README.md", "r", encoding="utf-8") as fh:
 
 setup(
     name="proxy_fetcher",
-    version="0.1.2",
+    version="0.1.0",
     author="Ilmir Gilmiiarov",
     author_email="ilmir_gf@mail.ru",
     description="Package for fetching and validating working HTTP/HTTPS proxies from multiple sources",
