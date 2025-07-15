@@ -134,7 +134,7 @@ python
 with open('working_proxies.txt') as f:
     loaded_proxies = f.read().splitlines()
 
-Performance Tips
+## Performance Tips
 
     Increase concurrency: Set CONCURRENT_CHECKS=200-500 for faster validation
 
@@ -144,7 +144,7 @@ Performance Tips
 
     Use fresh proxies: Public proxies often have short lifespans
 
-Troubleshooting
+## Troubleshooting
 
     No proxies found:
 
@@ -184,3 +184,10 @@ Changelog (v0.3.0)
     Updated documentation with Google Finance examples
 
     For support and issues, visit GitHub Repository
+
+## Совместимость
+
+Пакет работает с Python 3.11 и выше. Для использования с Python 3.11 установите:
+
+```bash
+pip install proxy-fetcher==0.3.1

@@ -1,6 +1,6 @@
 Metadata-Version: 2.4
 Name: proxy_fetcher
-Version: 0.3.0
+Version: 0.3.1
 Summary: Package for fetching and validating working HTTP/HTTPS proxies from multiple sources
 Home-page: https://github.com/ilmir-muslim/proxy-fetcher
 Author: Ilmir Gilmiiarov
@@ -14,12 +14,12 @@ Classifier: Topic :: Internet :: Proxy Servers
 Classifier: Programming Language :: Python :: 3.13
 Classifier: License :: OSI Approved :: MIT License
 Classifier: Operating System :: OS Independent
-Requires-Python: >=3.13
+Requires-Python: >=3.11
 Description-Content-Type: text/markdown
 Requires-Dist: requests>=2.25.1
 Requires-Dist: tqdm>=4.60.0
 Requires-Dist: aiohttp>=3.9.0
-Requires-Dist: typing_extensions>=4.0.0; python_version < "3.11"
+Requires-Dist: typing_extensions>=4.0.0
 Dynamic: author
 Dynamic: author-email
 Dynamic: classifier
@@ -168,7 +168,7 @@ python
 with open('working_proxies.txt') as f:
     loaded_proxies = f.read().splitlines()
 
-Performance Tips
+## Performance Tips
 
     Increase concurrency: Set CONCURRENT_CHECKS=200-500 for faster validation
 
@@ -178,7 +178,7 @@ Performance Tips
 
     Use fresh proxies: Public proxies often have short lifespans
 
-Troubleshooting
+## Troubleshooting
 
     No proxies found:
 
@@ -218,3 +218,10 @@ Changelog (v0.3.0)
     Updated documentation with Google Finance examples
 
     For support and issues, visit GitHub Repository
+
+## Совместимость
+
+Пакет работает с Python 3.11 и выше. Для использования с Python 3.11 установите:
+
+```bash
+pip install proxy-fetcher==0.3.1

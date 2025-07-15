@@ -1,8 +1,7 @@
 import asyncio
 import aiohttp
-from tqdm.asyncio import tqdm_asyncio
-import random
 import requests
+from tqdm.asyncio import tqdm_asyncio
 from typing import Callable, Optional
 
 DEFAULT_SETTINGS = {

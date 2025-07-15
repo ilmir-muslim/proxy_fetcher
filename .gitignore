@@ -6,3 +6,5 @@ save_all_files.sh
 __pycache__/
 working_proxies.txt
 test_proxy_fetcher.py
+venv311/
+test_proxy_fetcher311.py
