@@ -1,2 +1,8 @@
 venv/
 token.txt
+patches/
+save_all_files.sh
+*.pyc
+__pycache__/
+working_proxies.txt
+test_proxy_fetcher.py
